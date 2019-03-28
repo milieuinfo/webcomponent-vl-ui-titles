@@ -3,7 +3,7 @@ import '/node_modules/vl-ui-core/vl-core.src.js';
 /**
  * vl-title
  *
- * @demo demo/vl-title.html
+ * @demo demo/vl-titles.html
  */
 export class VlTitle extends HTMLHeadingElement {
 

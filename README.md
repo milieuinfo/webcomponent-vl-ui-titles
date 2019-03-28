@@ -1,6 +1,9 @@
-# "vl-title" Web Component
-De ["titles" component van Webuniversum Vlaanderen](https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-titles/) als Web Component
+# "vl-titles" Web Component
+De ["titles" component van Webuniversum Vlaanderen](https://overheid.vlaanderen.be/webuniversum/v3/documentation/atoms/vl-ui-titles/) als Web Component.
 
+Omvat custom elementen die extenden van de native elementen h1 t/m h6.
+
+Passen VO styling toe.
 
 ## Installation
 ```
