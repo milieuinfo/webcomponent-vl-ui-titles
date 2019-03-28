@@ -14,6 +14,7 @@ npm run demo
 
 ## Kanttekening
 Niet geïmplementeerd:
+* Alt title
 * Title with sublink
 
 ## Credits
