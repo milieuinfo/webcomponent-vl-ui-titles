@@ -57,7 +57,7 @@
             });
 
             test('krijgt de juiste class wanneer de heading een attribuut bevat', () => {
-                ['sans', 'has-border'].forEach((attr) => {
+                ['sans', 'has-border', 'alt'].forEach((attr) => {
                     assert.isFalse(title.classList.contains('vl-title--' + attr));
                     title.setAttribute(attr, '');
                     assert.isTrue(title.classList.contains('vl-title--' + attr));

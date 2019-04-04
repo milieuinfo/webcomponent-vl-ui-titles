@@ -1,32 +1,21 @@
-import '/node_modules/vl-ui-core/vl-core.src.js';
+import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * vl-title
  *
  * @demo demo/vl-titles.html
  */
-export class VlTitle extends HTMLHeadingElement {
+export class VlTitle extends NativeVlElement(HTMLHeadingElement) {
 
-    static get observedAttributes() {
+    static get _observedClassAttributes() {
         return ['sans','has-border','alt'];
     }
 
     constructor() {
         super();
-
         this.classList.add("vl-title");
         this.classList.add("vl-title--"+this.tagName.toLowerCase());
     }
-
-    attributeChangedCallback(attr) {
-
-        if(this.hasAttribute(attr)){
-            this.classList.add(this._classPrefix+attr);
-        } else {
-            this.classList.remove(this._classPrefix+attr);
-        }
-    }
-
 
     get _classPrefix() {
         return 'vl-title--';

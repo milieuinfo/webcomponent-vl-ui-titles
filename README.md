@@ -17,8 +17,8 @@ npm run demo
 
 ## Kanttekening
 Niet geïmplementeerd:
-* Alt title
 * Title with sublink
+* Title with button
 
 ## Credits
 Zie de lijst van [ontwikkelaars](https://github.com/milieuinfo/webcomponent-vl-ui-titles/graphs/contributors) die meegewerkt hebben aan de webcomponent.
