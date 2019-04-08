@@ -2,6 +2,15 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * vl-title
+ * Gebruik de vl-title om titels en subtitels als leidraad voor de gebruiker om door de content te gaan.
+ * 
+ * ### Attributen
+ * Attribuut | Uitleg | Waarde
+ * ----------|--------|--------
+ * `sans` | Wordt gebruikt om de font te wijzigen van Flanders Serif naar Flanders Sans. | { boolean }
+ * `has-border` | Voegt een subtiele lijn toe onder de titel. | { boolean }
+ * `alt` | Wordt gebruikt voor een alt titel en zal altijd een lijn toevoegen onder de titel. | { boolean }
+ 
  *
  * @demo demo/vl-titles.html
  */
