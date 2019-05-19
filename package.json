@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-titles",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "De \"titles\" UI component van Webuniversum Vlaanderen als Web Component",
   "main": "vl-titles.js",
   "scripts": {
