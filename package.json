@@ -1,10 +1,10 @@
 {
   "name": "vl-ui-titles",
-  "version": "1.0.9",
+  "version": "1.0.12",
   "description": "De \"titles\" UI component van Webuniversum Vlaanderen als Web Component",
   "main": "vl-titles.js",
   "scripts": {
-    "prepare": "npm run prepare:util",
+    "prepare": "npm update --dev vl-ui-util && npm run prepare:util",
     "prepare:util": "npm explore vl-ui-util -- npm run util",
     "test": "wct -l chrome,firefox --npm",
     "release": "np",
@@ -17,7 +17,7 @@
     "demo": "http-server"
   },
   "dependencies": {
-    "vl-ui-core": "1.4.3"
+    "vl-ui-core": "1.4.5"
   },
   "peerDependencies": {
     "vl-ui-core": "^1.4.2"
@@ -29,7 +29,7 @@
     "np": "3.1.0",
     "replace": "1.1.0",
     "uglify-js-es6": "2.8.9",
-    "vl-ui-util": "^1.2.3",
+    "vl-ui-util": "^1.2.23",
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2"
   },
