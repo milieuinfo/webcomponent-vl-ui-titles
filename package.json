@@ -36,7 +36,7 @@
   "devDependencies": {
     "@govflanders/vl-ui-titles": "3.9.1",
     "@govflanders/vl-ui-util": "3.9.1",
-    "vl-ui-util": "^3.4.2"
+    "vl-ui-util": "^3.4.4"
   },
   "repository": {
     "type": "git",
