@@ -1,3 +1,5 @@
 module.exports = { 
-    'VlTitles': require('./test/e2e/components/vl-titles')
+    Test: {
+        'VlTitles': require('./test/e2e/components/vl-titles.js')
+    }
 }

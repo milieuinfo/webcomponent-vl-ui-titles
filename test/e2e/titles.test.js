@@ -1,5 +1,5 @@
 
-const { assert, driver } = require('vl-ui-core').Test;
+const { assert, driver } = require('vl-ui-core').Test.Setup;
 const VlTitlesPages = require('./pages/vl-titles.page');
 
 describe('vl-titles', async () => {
@@ -7,5 +7,9 @@ describe('vl-titles', async () => {
 
     before(() => {
         return vlTitlesPage.load();
+    });
+
+    after(async () => { 
+        return driver.quit();
     });
 });

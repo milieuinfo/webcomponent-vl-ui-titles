@@ -1,6 +1,5 @@
 const VlTitles = require('../components/vl-titles');
-const { Page } = require('vl-ui-core');
-const { Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlTitlesPage extends Page {
     async _getTitle(selector) {
