@@ -9,7 +9,8 @@ describe('vl-titles', async () => {
         return vlTitlesPage.load();
     });
 
-    after(async () => { 
-        return driver.quit();
+    it('dummy test omdat anders de browser vensters niet gesloten worden', async () => {
+    	assert.isTrue(true);
     });
+
 });

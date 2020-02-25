@@ -1,3 +1,3 @@
 module.exports = { 
-    VlTitle: require('../vl-titles.src.js').VlTitle,
+    VlTitle: require('../dist/vl-titles.src.js').VlTitle,
 }
