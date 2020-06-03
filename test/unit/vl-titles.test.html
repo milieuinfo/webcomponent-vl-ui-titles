@@ -44,30 +44,27 @@
 
 <script>
     suite('<vl-title>', () => {
-        const should = chai.should();
+      ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].forEach((level) => {
+        const title = fixture('vl-'+level+'-fixture');
 
-        ['h1','h2','h3','h4','h5','h6'].forEach((level) => {
-
-            const title = fixture('vl-'+level+'-fixture');
-
-            test('heeft de vl-title class', () => {
-                assert.isTrue(title.classList.contains('vl-title'));
-            });
-
-            test('heeft de vl-title--'+level+' class', () => {
-                assert.isTrue(title.classList.contains('vl-title--'+level));
-            });
-
-            test('krijgt de juiste class wanneer de heading een attribuut bevat', () => {
-                ['sans', 'has-border', 'alt'].forEach((attr) => {
-                    assert.isFalse(title.classList.contains('vl-title--' + attr));
-                    title.setAttribute(attr, '');
-                    assert.isTrue(title.classList.contains('vl-title--' + attr));
-                    title.removeAttribute(attr);
-                    assert.isFalse(title.classList.contains('vl-title--' + attr));
-                });
-            });
+        test('heeft de vl-title class', () => {
+          assert.isTrue(title.classList.contains('vl-title'));
         });
+
+        test('heeft de vl-title--'+level+' class', () => {
+          assert.isTrue(title.classList.contains('vl-title--'+level));
+        });
+
+        test('krijgt de juiste class wanneer de heading een attribuut bevat', () => {
+          ['sans', 'has-border', 'alt'].forEach((attr) => {
+            assert.isFalse(title.classList.contains('vl-title--' + attr));
+            title.setAttribute(attr, '');
+            assert.isTrue(title.classList.contains('vl-title--' + attr));
+            title.removeAttribute(attr);
+            assert.isFalse(title.classList.contains('vl-title--' + attr));
+          });
+        });
+      });
     });
 </script>
 </body>
