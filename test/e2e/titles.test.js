@@ -40,6 +40,6 @@ describe('vl-titles', async () => {
     await assert.eventually.isFalse(title.isSansFont());
     await assert.eventually.isFalse(title.hasBorder());
     await assert.eventually.isTrue(title.isAlt());
-    await assert.eventually.equal(title.getText(), 'DIT IS EEN VL-H6 MET "ALT"');
+    await assert.eventually.equal(title.getText(), 'Dit is een vl-h6 met "alt"');
   });
 });
