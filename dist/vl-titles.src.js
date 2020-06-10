@@ -1,4 +1,4 @@
-import {nativeVlElement, define} from vl-ui-core;
+import {nativeVlElement, define} from 'vl-ui-core';
 
 /**
  * VlTitle
@@ -6,7 +6,6 @@ import {nativeVlElement, define} from vl-ui-core;
  * @classdesc Gebruik de vl-title om titels en subtitels als leidraad voor de gebruiker om door de content te gaan.
  *
  * @extends HTMLHeadingElement
- * @mixin nativeVlElement
  *
  * @property {boolean} sans - Attribuut wordt gebruikt om de font te wijzigen van Flanders Serif naar Flanders Sans.
  * @property {boolean} has-border - Attribuut wordt gebruikt om een subtiele lijn toe te voegen onder de titel.
