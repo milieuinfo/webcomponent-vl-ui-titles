@@ -8,13 +8,13 @@ describe('vl-titles', async () => {
     return vlTitlesPage.load();
   });
 
-  it('Als gebruiker kan ik een gewone h2, h3, h4 en h5 zien', async () => {
+  it('Als gebruiker kan ik een h1, h2, h3, h4, h5 en h6 zien', async () => {
     const testStandardTitle = async (title, headerNumber) => {
       await assert.eventually.isTrue(title.isH(headerNumber));
       await assert.eventually.isFalse(title.isSansFont());
       await assert.eventually.isFalse(title.hasBorder());
       await assert.eventually.isFalse(title.isAlt());
-      await assert.eventually.equal(title.getText(), `Dit is een h${headerNumber}`);
+      await assert.eventually.equal(title.getText(), `Dit is een h${headerNumber} titel`);
     };
 
     await testStandardTitle(await vlTitlesPage.getH1(), 1);
@@ -25,8 +25,8 @@ describe('vl-titles', async () => {
     await testStandardTitle(await vlTitlesPage.getH6(), 6);
   });
 
-  it('Als gebruiker kan ik een h1 zien met sans font en een border', async () => {
-    const title = await vlTitlesPage.getH1WithSansFontAndBorder();
+  it('Als gebruiker kan ik een h1 zien met sans-serif font en een border', async () => {
+    const title = await vlTitlesPage.getSansH1();
     await assert.eventually.isTrue(title.isH(1));
     await assert.eventually.isTrue(title.isSansFont());
     await assert.eventually.isTrue(title.hasBorder());
@@ -35,7 +35,7 @@ describe('vl-titles', async () => {
   });
 
   it('Als gebruiker kan ik een alternatieve h6 zien', async () => {
-    const title = await vlTitlesPage.getAltH6();
+    const title = await vlTitlesPage.getAltH5();
     await assert.eventually.isTrue(title.isH(6));
     await assert.eventually.isFalse(title.isSansFont());
     await assert.eventually.isFalse(title.hasBorder());
