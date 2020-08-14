@@ -1,65 +1,62 @@
 const {VlH1, VlH2, VlH3, VlH4, VlH5, VlH6} = require('../components/vl-titles');
 const {Page, Config} = require('vl-ui-core').Test;
+const {By} = require('vl-ui-core').Test.Setup;
 
 class VlTitlesPage extends Page {
-  async _getH1(selector) {
-    return new VlH1(this.driver, selector);
+  async getH1() {
+    return new VlH1(this.driver, await this._getH(1));
   }
 
-  async _getH2(selector) {
-    return new VlH2(this.driver, selector);
+  async getH2() {
+    return new VlH2(this.driver, await this._getH(2));
   }
 
-  async _getH3(selector) {
-    return new VlH3(this.driver, selector);
+  async getH3() {
+    return new VlH3(this.driver, await this._getH(3));
   }
 
-  async _getH4(selector) {
-    return new VlH4(this.driver, selector);
+  async getH4() {
+    return new VlH4(this.driver, await this._getH(4));
   }
 
-  async _getH5(selector) {
-    return new VlH5(this.driver, selector);
+  async getH5() {
+    return new VlH5(this.driver, await this._getH(5));
   }
 
-  async _getH6(selector) {
-    return new VlH6(this.driver, selector);
+  async getH6() {
+    return new VlH6(this.driver, await this._getH(6));
+  }
+
+  async getSansH1() {
+    return new VlH1(this.driver, await this._getSansH(1));
+  }
+
+  async getBorderH1() {
+    return new VlH1(this.driver, await this._getBorderH(1));
+  }
+
+  async getAltH5() {
+    return new VlH5(this.driver, await this._getAltH(5));
   }
 
   async load() {
     await super.load(`${Config.baseUrl}/demo/vl-titles.html`);
   }
 
-  async getH1WithSansFontAndBorder() {
-    return this._getH1('#h1-sans-border');
+  async _getH(number) {
+    return this.driver.findElement(By.css(`#h${number}`));
   }
 
-  async getH1() {
-    return this._getH1('#h1');
+  async _getSansH(number) {
+    return this.driver.findElement(By.css(`#h${number}-sans`));
   }
 
-  async getH2() {
-    return this._getH2('#h2');
+  async _getBorderH(number) {
+    return this.driver.findElement(By.css(`#h${number}-border`));
   }
 
-  async getH3() {
-    return this._getH3('#h3');
-  }
-
-  async getH4() {
-    return this._getH4('#h4');
-  }
-
-  async getH5() {
-    return this._getH5('#h5');
-  }
-
-  async getH6() {
-    return this._getH5('#h6');
-  }
-
-  async getAltH6() {
-    return this._getH6('#h6-alt');
+  async _getAltH(number) {
+    return this.driver.findElement(By.css(`#h${number}-alt`));
   }
 }
 
