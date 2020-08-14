@@ -31,8 +31,12 @@ class VlTitlesPage extends Page {
     return new VlH1(this.driver, await this._getSansH(1));
   }
 
+  async getBorderH1() {
+    return new VlH1(this.driver, await this._getBorderH(1));
+  }
+
   async getAltH5() {
-    return new VlH5(this.driver, await this._getAltH(1));
+    return new VlH5(this.driver, await this._getAltH(5));
   }
 
   async load() {
@@ -40,19 +44,19 @@ class VlTitlesPage extends Page {
   }
 
   async _getH(number) {
-    return this.findElement(By.css(`#h${number}`));
+    return this.driver.findElement(By.css(`#h${number}`));
   }
 
   async _getSansH(number) {
-    return this.findElement(By.css(`#h${number}-sans`));
+    return this.driver.findElement(By.css(`#h${number}-sans`));
   }
 
   async _getBorderH(number) {
-    return this.findElement(By.css(`#h${number}-border`));
+    return this.driver.findElement(By.css(`#h${number}-border`));
   }
 
   async _getAltH(number) {
-    return this.findElement(By.css(`#h${number}-alt`));
+    return this.driver.findElement(By.css(`#h${number}-alt`));
   }
 }
 
