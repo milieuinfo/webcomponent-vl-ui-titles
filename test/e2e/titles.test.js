@@ -1,14 +1,15 @@
-const {assert, driver} = require('vl-ui-core').Test.Setup;
+const {assert, getDriver} = require('vl-ui-core').Test.Setup;
 const VlTitlesPages = require('./pages/vl-titles.page');
 
 describe('vl-titles', async () => {
-  const vlTitlesPage = new VlTitlesPages(driver);
+  let vlTitlesPage;
 
   before(() => {
+    vlTitlesPage = new VlTitlesPages(getDriver());
     return vlTitlesPage.load();
   });
 
-  it('Als gebruiker kan ik een h1, h2, h3, h4, h5 en h6 zien', async () => {
+  it('als gebruiker kan ik een h1, h2, h3, h4, h5 en h6 zien', async () => {
     const testStandardTitle = async (title, headerNumber) => {
       await assert.eventually.isTrue(title.isH(headerNumber));
       await assert.eventually.isFalse(title.isSansFont());
@@ -25,7 +26,7 @@ describe('vl-titles', async () => {
     await testStandardTitle(await vlTitlesPage.getH6(), 6);
   });
 
-  it('Als gebruiker kan ik een h1 zien met sans-serif font', async () => {
+  it('als gebruiker kan ik een h1 zien met sans-serif font', async () => {
     const title = await vlTitlesPage.getSansH1();
     await assert.eventually.isTrue(title.isH(1));
     await assert.eventually.isTrue(title.isSansFont());
@@ -34,7 +35,7 @@ describe('vl-titles', async () => {
     await assert.eventually.equal(title.getText(), 'Dit is een h1 titel');
   });
 
-  it('Als gebruiker kan ik een h1 zien die onderlijnd wordt', async () => {
+  it('als gebruiker kan ik een h1 zien die onderlijnd wordt', async () => {
     const title = await vlTitlesPage.getBorderH1();
     await assert.eventually.isTrue(title.isH(1));
     await assert.eventually.isFalse(title.isSansFont());
@@ -43,7 +44,7 @@ describe('vl-titles', async () => {
     await assert.eventually.equal(title.getText(), 'Dit is een h1 titel');
   });
 
-  it('Als gebruiker kan ik een alternatieve h6 zien', async () => {
+  it('als gebruiker kan ik een alternatieve h6 zien', async () => {
     const title = await vlTitlesPage.getAltH5();
     await assert.eventually.isTrue(title.isH(5));
     await assert.eventually.isFalse(title.isSansFont());
