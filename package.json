@@ -43,9 +43,9 @@
     "vl-ui-core": "^6.0.0"
   },
   "devDependencies": {
-    "@govflanders/vl-ui-titles": "^3.11.5",
-    "@govflanders/vl-ui-util": "^3.11.5",
+    "@govflanders/vl-ui-titles": "^3.12.3",
+    "@govflanders/vl-ui-util": "^3.12.3",
     "vl-ui-body": "^1.0.5",
-    "vl-ui-util": "^5.3.1"
+    "vl-ui-util": "github:milieuinfo/webcomponent-vl-ui-util#new-icon"
   }
 }
