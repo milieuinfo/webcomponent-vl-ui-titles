@@ -18,12 +18,12 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
  */
 export class VlTitle extends nativeVlElement(HTMLHeadingElement) {
   static get _observedClassAttributes() {
-    return ['sans', 'has-border', 'alt'];
+    return ['sans', 'has-border', 'alt', 'no-space-bottom'];
   }
 
   connectedCallback() {
     this.classList.add('vl-title');
-    this.classList.add('vl-title--'+this.tagName.toLowerCase());
+    this.classList.add('vl-title--' + this.tagName.toLowerCase());
   }
 
   get _classPrefix() {

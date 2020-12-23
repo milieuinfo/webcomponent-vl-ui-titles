@@ -39,6 +39,10 @@ class VlTitlesPage extends Page {
     return new VlH5(this.driver, await this._getAltH(5));
   }
 
+  async getNoSpaceBottomH1() {
+    return new VlH1(this.driver, await this._getNoSpaceBottomH(1));
+  }
+
   async load() {
     await super.load(`${Config.baseUrl}/demo/vl-titles.html`);
   }
@@ -57,6 +61,10 @@ class VlTitlesPage extends Page {
 
   async _getAltH(number) {
     return this.driver.findElement(By.css(`#h${number}-alt`));
+  }
+
+  async _getNoSpaceBottomH(number) {
+    return this.driver.findElement(By.css(`#h${number}-no-space-bottom`));
   }
 }
 
