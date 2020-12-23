@@ -11,6 +11,7 @@ import {nativeVlElement, define} from 'vl-ui-core';
  * @property {boolean} data-vl-sans - Attribuut wordt gebruikt om de font te wijzigen van Flanders Serif naar Flanders Sans.
  * @property {boolean} data-vl-has-border - Attribuut wordt gebruikt om een subtiele lijn toe te voegen onder de titel.
  * @property {boolean} data-vl-alt - Attribuut wordt gebruikt voor een alt titel en zal altijd een lijn toevoegen onder de titel.
+ * @property {boolean} data-vl-no-space-bottom - Attribuut wordt gebruikt wanneer een titel gecombineerd wordt met de grid component.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-titles/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-titles/issues|Issues}
