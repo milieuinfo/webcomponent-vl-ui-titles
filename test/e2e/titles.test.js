@@ -28,28 +28,33 @@ describe('vl-titles', async () => {
 
   it('als gebruiker kan ik een h1 zien met sans-serif font', async () => {
     const title = await vlTitlesPage.getSansH1();
-    await assert.eventually.isTrue(title.isH(1));
     await assert.eventually.isTrue(title.isSansFont());
     await assert.eventually.isFalse(title.hasBorder());
     await assert.eventually.isFalse(title.isAlt());
-    await assert.eventually.equal(title.getText(), 'Dit is een h1 titel');
+    await assert.eventually.isFalse(title.hasNoSpaceBottom());
   });
 
   it('als gebruiker kan ik een h1 zien die onderlijnd wordt', async () => {
     const title = await vlTitlesPage.getBorderH1();
-    await assert.eventually.isTrue(title.isH(1));
     await assert.eventually.isFalse(title.isSansFont());
     await assert.eventually.isTrue(title.hasBorder());
     await assert.eventually.isFalse(title.isAlt());
-    await assert.eventually.equal(title.getText(), 'Dit is een h1 titel');
+    await assert.eventually.isFalse(title.hasNoSpaceBottom());
   });
 
-  it('als gebruiker kan ik een alternatieve h6 zien', async () => {
+  it('als gebruiker kan ik een alternatieve h5 zien', async () => {
     const title = await vlTitlesPage.getAltH5();
-    await assert.eventually.isTrue(title.isH(5));
     await assert.eventually.isFalse(title.isSansFont());
     await assert.eventually.isFalse(title.hasBorder());
     await assert.eventually.isTrue(title.isAlt());
-    await assert.eventually.equal(title.getText(), 'Dit is een alt titel');
+    await assert.eventually.isFalse(title.hasNoSpaceBottom());
+  });
+
+  it('als gebruiker kan ik een h1 zonder space zien', async () => {
+    const title = await vlTitlesPage.getNoSpaceBottomH1();
+    await assert.eventually.isFalse(title.isSansFont());
+    await assert.eventually.isFalse(title.hasBorder());
+    await assert.eventually.isFalse(title.isAlt());
+    await assert.eventually.isTrue(title.hasNoSpaceBottom());
   });
 });

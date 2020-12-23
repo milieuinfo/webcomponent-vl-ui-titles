@@ -47,7 +47,9 @@
         </template>
     </test-fixture>
 
-    <script>
+    <script type="module">
+        import {VlTitle} from '/src/vl-titles.js';
+
         suite('vl-title', () => {
           ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].forEach((level) => {
             const title = fixture('vl-'+level+'-fixture');
@@ -61,7 +63,7 @@
             });
 
             test('krijgt de juiste class wanneer de heading een attribuut bevat', () => {
-              ['sans', 'has-border', 'alt'].forEach((attribute) => {
+              VlTitle._observedClassAttributes.forEach((attribute) => {
                 assert.isFalse(title.classList.contains('vl-title--' + attribute));
                 title.setAttribute(`data-vl-${attribute}`, '');
                 assert.isTrue(title.classList.contains('vl-title--' + attribute));

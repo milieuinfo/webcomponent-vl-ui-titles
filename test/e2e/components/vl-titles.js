@@ -13,6 +13,10 @@ class VlTitle extends VlElement {
     return this.hasAttribute('alt');
   }
 
+  async hasNoSpaceBottom() {
+    return this.hasAttribute('no-space-bottom');
+  }
+
   async isH(headerNumber) {
     return await this.getTagName() === `h${headerNumber}`;
   }
