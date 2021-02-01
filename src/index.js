@@ -1,3 +1,1 @@
-module.exports = {
-  VlTitle: require('../dist/vl-titles.src.js').VlTitle,
-};
+export * from '../dist/vl-titles.src.js';
