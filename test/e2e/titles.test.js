@@ -9,6 +9,10 @@ describe('vl-titles', async () => {
     return vlTitlesPage.load();
   });
 
+  it('WCAG', async () => {
+    await assert.eventually.isFalse(vlTitlesPage.hasWcagIssues());
+  });
+
   it('als gebruiker kan ik een h1, h2, h3, h4, h5 en h6 zien', async () => {
     const testStandardTitle = async (title, headerNumber) => {
       await assert.eventually.isTrue(title.isH(headerNumber));
@@ -42,16 +46,16 @@ describe('vl-titles', async () => {
     await assert.eventually.isFalse(title.hasNoSpaceBottom());
   });
 
-  it('als gebruiker kan ik een alternatieve h5 zien', async () => {
-    const title = await vlTitlesPage.getAltH5();
+  it('als gebruiker kan ik een alternatieve h4 zien', async () => {
+    const title = await vlTitlesPage.getAltH4();
     await assert.eventually.isFalse(title.isSansFont());
     await assert.eventually.isFalse(title.hasBorder());
     await assert.eventually.isTrue(title.isAlt());
     await assert.eventually.isFalse(title.hasNoSpaceBottom());
   });
 
-  it('als gebruiker kan ik een h1 zonder space zien', async () => {
-    const title = await vlTitlesPage.getNoSpaceBottomH1();
+  it('als gebruiker kan ik een h4 zonder space zien', async () => {
+    const title = await vlTitlesPage.getNoSpaceBottomH4();
     await assert.eventually.isFalse(title.isSansFont());
     await assert.eventually.isFalse(title.hasBorder());
     await assert.eventually.isFalse(title.isAlt());
