@@ -35,12 +35,12 @@ class VlTitlesPage extends Page {
     return new VlH1(this.driver, await this._getBorderH(1));
   }
 
-  async getAltH5() {
-    return new VlH5(this.driver, await this._getAltH(5));
+  async getAltH4() {
+    return new VlH4(this.driver, await this._getAltH(4));
   }
 
-  async getNoSpaceBottomH1() {
-    return new VlH1(this.driver, await this._getNoSpaceBottomH(1));
+  async getNoSpaceBottomH4() {
+    return new VlH4(this.driver, await this._getNoSpaceBottomH(4));
   }
 
   async load() {
